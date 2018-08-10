@@ -1,20 +1,33 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import PagesView from '../views/PagesView.vue'
-import HomeView from '../views/HomeView'
-import MovieView from '../views/MovieView'
-import BookView from '../views/BookView'
-import StatusView from '../views/StatusView'
-import GroupView from '../views/GroupView'
-import SubjectView from '../views/SubjectView'
-import DetailView from '../views/DetailView'
-import SearchView from '../views/SearchView'
-import LoginView from '../views/LoginView'
-import RegisterView from '../views/RegisterView'
-import LangTest from '../views/test.vue'
+// import PagesView from '../views/PagesView.vue'
+// import HomeView from '../views/HomeView.vue'
+// import MovieView from '../views/MovieView.vue'
+// import BookView from '../views/BookView.vue'
+// import StatusView from '../views/StatusView.vue'
+// import GroupView from '../views/GroupView.vue'
+// import SubjectView from '../views/SubjectView.vue'
+// import DetailView from '../views/DetailView.vue'
+// import SearchView from '../views/SearchView.vue'
+// import LoginView from '../views/LoginView.vue'
+// import RegisterView from '../views/RegisterView.vue'
+// import LangTest from '../views/test.vue'
 
-Vue.use(Router)
+const PagesView = () => import('../views/PagesView.vue');
+const HomeView = () => import('../views/HomeView.vue');
+const MovieView = () => import('../views/MovieView.vue');
+const BookView = () => import('../views/BookView.vue');
+const StatusView = () => import('../views/StatusView.vue');
+const GroupView = () => import('../views/GroupView.vue');
+const SubjectView = () => import('../views/SubjectView.vue');
+const DetailView = () => import('../views/DetailView.vue');
+const SearchView = () => import('../views/SearchView.vue');
+const LoginView = () => import('../views/LoginView.vue');
+const RegisterView = () => import('../views/RegisterView.vue');
+const LangTest = () => import('../views/test.vue');
+
+Vue.use(Router);
 
 export default new Router({
   routes: [

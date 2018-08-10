@@ -13,7 +13,7 @@ import { mapState, mapActions } from 'vuex'
 
 import InfiniteLoading from 'vue-infinite-loading'
 import SubNav from '../components/SubNav'
-import List from '../components/List'
+import List from '../components/List.vue'
 import Loading from '../components/Loading'
 
 export default {

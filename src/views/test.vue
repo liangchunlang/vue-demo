@@ -2,9 +2,9 @@
   <div class="movie-view has-header">
     <p>这里是data里面的信息哦---{{message}}</p>
     <p>这里是computed里面的信息哦---{{newMessage}}</p>
-    <button v-on:click="changeMessage">点击增加数值</button>
+    <button v-on:click="changeMessage">点击增加数值kakakaka</button>
     <input v-model="message" placeholder="edit me">
-    <p>Message is: {{ message }}</p>
+    <p class="nihao">Message is: {{ message }}</p>
     <linkage :count="count" @changeCount="changeCount" v-model="lovingVue">
       <p>这里其实是父级的内容</p>
     </linkage>
@@ -54,36 +54,15 @@
       }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   }
-
-
-
-
-
 
 
 
 
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+  .nihao{
+    color: deepskyblue;
+  }
 </style>
