@@ -2,7 +2,7 @@
   <div class="movie-view has-header">
     <p>这里是data里面的信息哦---{{message}}</p>
     <p>这里是computed里面的信息哦---{{newMessage}}</p>
-    <button v-on:click="changeMessage">点击增加数值kakakaka</button>
+    <button @click="changeMessage">点击增加数值kakakaka</button>
     <input v-model="message" placeholder="edit me">
     <p class="nihao">Message is: {{ message }}</p>
     <linkage :count="count" @changeCount="changeCount" v-model="lovingVue">
@@ -10,18 +10,20 @@
     </linkage>
     <animate-example></animate-example>
     <button @click="getBookList">点击测试vuex</button>
+    <jsx-test></jsx-test>
   </div>
 </template>
 
 <script>
   import Linkage from '../components/Linkage.vue'
   import AnimateExample from '../components/Animate.vue'
+  import JsxTest from '../components/JsxTest'
   import { mapState } from 'vuex'
 
 
   export default {
     name: 'lang-test',
-    components:{ Linkage,AnimateExample },
+    components:{ Linkage,AnimateExample,JsxTest },
     data(){
       return{
         message:'nihao',
@@ -40,17 +42,16 @@
     methods:{
       changeMessage() {
         this.count++
-
       },
       changeCount(data){
         this.count = data;
       },
       getBookList(){
         const lang = this.$store.dispatch({type:'getBookList'});
-        lang.then((data)=>{
-          console.log('data',data.books);
-        });
 
+        lang.then((data)=>{
+          console.log('data--3',data.books);
+        });
       }
     }
 

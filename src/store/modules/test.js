@@ -1,6 +1,8 @@
 import request from 'superagent'
 import jsonp from 'superagent-jsonp'
 
+import api from '../../utils/api'
+
 
 const state={
   bookList:{}
@@ -10,20 +12,16 @@ const actions={
   getBookList({commit}){
 
     return new Promise((resolve,reject)=>{
-      request.get('/api/book/search?q=虚构类&count=8')
-        .use(jsonp({timeout:10000}))
-        .end((err,res)=>{
-          if(!err){
-            commit({
-              type:'getBookList',
-              res:res.body
-            });
-            console.log('res',res);
-            resolve(res.body)
-          }
-
-        })
-    });
+      api.get('https://api.douban.com/v2/book/search',{q:'虚构类',count:8})
+        .then((response)=>{
+        commit({
+          type:'getBookList',
+          res:response.body
+        });
+        console.log('res--2',response.body);
+        resolve(response.body)
+      });
+    })
 
   }
 };
